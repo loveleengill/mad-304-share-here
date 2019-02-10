@@ -15,7 +15,7 @@ public class AdminHome extends AppCompatActivity {
 
         Button add = (Button) findViewById(R.id.add);
         Button del = (Button) findViewById(R.id.del);
-
+        Button upd = (Button) findViewById(R.id.upd);
 
         add.setOnClickListener(new View.OnClickListener(){
 
@@ -37,6 +37,15 @@ public class AdminHome extends AppCompatActivity {
             }
         });
 
+        upd.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent i = new Intent(getApplicationContext(), Update.class);
+                startActivity(i);
+            }
+        });
 
 
     }
