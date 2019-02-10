@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ic"
+        android:layout_width="wrap_content"
+        android:layout_height="89dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="39dp"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/ic_launcher" />
+
+
+    <TextView
+        android:id="@+id/tvbdate"
+        android:layout_width="117dp"
+        android:layout_height="36dp"
+        android:layout_alignTop="@+id/ic"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="134dp"
+        android:layout_marginTop="30dp"
+        android:maxLines="1"
+        android:text="Birthdate"
+        android:textColor="@android:color/black"
+        android:textSize="14dp"></TextView>
+
+    <TextView
+        android:id="@+id/tvcity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="12dp"
+        android:maxLines="1"
+        android:text="City"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+</RelativeLayout>
