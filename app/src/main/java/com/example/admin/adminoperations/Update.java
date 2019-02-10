@@ -40,7 +40,7 @@ import java.util.List;
 public class Update extends AppCompatActivity {
     ListView yourListView;
     List<Item> items;
-    ListAdapter customAdapter;
+    ListAdapter2 customAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +95,7 @@ public class Update extends AppCompatActivity {
                     ));
                 }
 
-                customAdapter = new ListAdapter(cx, R.layout.row,items);
+                customAdapter = new ListAdapter2(cx, R.layout.row,items);
                 yourListView.setAdapter(customAdapter);
 
             } catch (JSONException e) {
@@ -155,7 +155,9 @@ Context cx;
             ed.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                     Toast.makeText(cx, "ON CKIC", Toast.LENGTH_LONG).show();
+
+                    
+
                 }
             });
 
