@@ -238,7 +238,7 @@ class ListAdapter1 extends ArrayAdapter<Item> {
 
 
             new DownloadImageTask(im)
-                    .execute("http://192.168.2.26/internship/mobile/files/"+p.image);
+                    .execute("http://192.168.2.26:8080/internship/mobile/files/"+p.image);
 
 
 

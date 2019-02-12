@@ -151,8 +151,8 @@ class ListAdapter extends ArrayAdapter<Item> {
 
            content.setText(p.content);
            des.setText(p.desc);
-                new DownloadImageTask(im)
-                        .execute("http://192.168.2.26/internship/mobile/files/"+p.image);
+                new DownloadImageTask(im, "http://192.168.2.26:8080/internship/mobile/files/"+p.image).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
 
         }
 
@@ -164,13 +164,14 @@ class ListAdapter extends ArrayAdapter<Item> {
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
-
-        public DownloadImageTask(ImageView bmImage) {
+        String iu;
+        public DownloadImageTask(ImageView bmImage, String u) {
             this.bmImage = bmImage;
+            iu = u;
         }
 
         protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
+            String urldisplay = iu;
             Bitmap mIcon11 = null;
             try {
                 InputStream in = new java.net.URL(urldisplay).openStream();
