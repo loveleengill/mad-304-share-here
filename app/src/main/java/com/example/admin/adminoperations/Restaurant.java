@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -97,7 +98,7 @@ public class Restaurant extends AppCompatActivity {
 
 
 
-class Item{
+class Item implements Serializable {
 
     String image; String content; String desc;
     Integer id = 0;

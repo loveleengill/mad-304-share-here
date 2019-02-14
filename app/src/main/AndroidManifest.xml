@@ -23,7 +23,9 @@
         <activity android:name=".AdminAdd" />
         <activity android:name=".Registration" />
         <activity android:name=".AdminHome" />
-        <activity android:name=".Delete"></activity>
+        <activity android:name=".Delete" />
+        <activity android:name=".Update" />
+        <activity android:name=".Update2"></activity>
     </application>
 
 </manifest>
