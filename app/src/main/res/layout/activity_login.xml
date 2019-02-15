@@ -45,9 +45,11 @@
 
     <Button
         android:id="@+id/btn1"
+        style="@android:style/Widget.DeviceDefault.Light.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="login"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -58,6 +60,7 @@
 
     <Button
         android:id="@+id/btn2"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"

@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }else{
                     //redirect to
-                    Intent launchActivity1= new Intent(MainActivity.this,Restaurant.class);
+                    Intent launchActivity1= new Intent(MainActivity.this,Search.class);
                     startActivity(launchActivity1);
                 }
             }

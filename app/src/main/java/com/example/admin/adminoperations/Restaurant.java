@@ -66,7 +66,7 @@ public class Restaurant extends AppCompatActivity {
             JSONParser jParser = new JSONParser();
 
             // Getting JSON from URL
-            JSONArray json = jParser.getJSONFromUrl("http://192.168.2.26:8080/internship/mobile/main/getcategories");
+            JSONArray json = jParser.getJSONFromUrl("http://192.168.2.26:8080/internship/mobile/main/getcategoriesres");
             return json;
         }
 

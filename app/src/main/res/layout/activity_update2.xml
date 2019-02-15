@@ -45,6 +45,7 @@
 
     <Button
         android:id="@+id/update"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="save"
