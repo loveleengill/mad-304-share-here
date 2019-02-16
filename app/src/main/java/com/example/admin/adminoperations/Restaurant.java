@@ -134,7 +134,7 @@ class ListAdapter extends ArrayAdapter<Item> {
         TextView content = null;
         TextView des = null;
 
-        if (v == null) {
+        if (true) {
 
             LayoutInflater vi;
             vi = LayoutInflater.from(getContext());
@@ -151,16 +151,8 @@ class ListAdapter extends ArrayAdapter<Item> {
 
            content.setText(p.content);
            des.setText(p.desc);
-
-
-
-
                 new DownloadImageTask(im)
-                        .execute("http://192.168.2.26:8080/internship/mobile/files/"+p.image);
-
-
-
-
+                        .execute("http://192.168.2.26/internship/mobile/files/"+p.image);
 
         }
 

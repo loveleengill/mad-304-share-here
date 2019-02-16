@@ -20,7 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Restaurant" />
-        <activity android:name=".AdminAdd"></activity>
+        <activity android:name=".AdminAdd" />
+        <activity android:name=".Registration" />
+        <activity android:name=".AdminHome" />
+        <activity android:name=".Delete"></activity>
     </application>
 
 </manifest>

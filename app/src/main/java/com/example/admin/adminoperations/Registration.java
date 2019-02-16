@@ -1,18 +1,11 @@
 package com.example.admin.adminoperations;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,40 +15,39 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity {
-    EditText username,password;
-    Button login,register;
-    RadioGroup rg;
-    String uname,pass,type,status;
+public class Registration extends AppCompatActivity {
+
+    EditText type,username,password,lastname,firstname,email;
+    Button signup;
+
+    String uname,pass,typee,fname,lname,emaill;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_registration);
+
+        type=findViewById(R.id.type);
         username=findViewById(R.id.username);
         password=findViewById(R.id.password);
-        rg = (RadioGroup) findViewById(R.id.radioGroup);
-        login=findViewById(R.id.btn1);
-        register=(Button) findViewById(R.id.btn2);
-        login.setOnClickListener(new View.OnClickListener() {
+        lastname=findViewById(R.id.lastname);
+        firstname=findViewById(R.id.firstname);
+
+        email=findViewById(R.id.email);
+
+        signup=findViewById(R.id.signup);
+        signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int selected=rg.getCheckedRadioButtonId();
-                RadioButton r=(RadioButton)findViewById(selected);
+                typee=type.getText().toString();
                 uname=username.getText().toString();
                 pass=password.getText().toString();
-                type= r.getText().toString();
+                lname=lastname.getText().toString();
+                fname=firstname.getText().toString();
+                emaill=email.getText().toString();
                 new MyTask().execute();
             }
         });
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i = new Intent(getApplicationContext(), Registration.class);
-                startActivity(i);
-            }
-        });
 
     }
 
@@ -70,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
 
-                url = new URL("http://192.168.2.26:8080/internship/mobile/main/login&"+ "'" + uname + "'"+ "&'" +pass+"'&'"+type+"'");
+                url = new URL("http://192.168.2.26:8080/internship/mobile/main/registration&"+typee+"&"+uname+"&"+pass+"&"+lname+"&"+fname+"&"+emaill+"");
                 HttpURLConnection client = null;
                 client = (HttpURLConnection) url.openConnection();
                 client.setRequestMethod("GET");
@@ -88,10 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 in.close();
 
 
-                System.out.println("The response is " + response.toString());
-                JSONObject ob = new JSONObject(response.toString());
-                status=ob.getString("STATUS");
-
 
             } catch (ProtocolException e) {
                 e.printStackTrace();
@@ -99,31 +87,14 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
 
-            return status;
+            return "";
         }
         @Override
         protected void onPostExecute(String result){
             super.onPostExecute(result);
-            if(result.equalsIgnoreCase("wrong"))
-            {
-                Toast.makeText(MainActivity.this,"user don't exist",Toast.LENGTH_LONG).show();
 
-            }else{
-                if(type.equals("admin")){
-                    Intent launchActivity1= new Intent(MainActivity.this,AdminHome.class);
-                    startActivity(launchActivity1);
-
-                }else{
-                    //redirect to
-                    Intent launchActivity1= new Intent(MainActivity.this,Restaurant.class);
-                    startActivity(launchActivity1);
-                }
-            }
         }
     }
 }
-
