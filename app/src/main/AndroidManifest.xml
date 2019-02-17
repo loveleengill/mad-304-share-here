@@ -26,7 +26,8 @@
         <activity android:name=".Delete" />
         <activity android:name=".Update" />
         <activity android:name=".Update2" />
-        <activity android:name=".Search"></activity>
+        <activity android:name=".Search" />
+        <activity android:name=".Travel"></activity>
     </application>
 
 </manifest>

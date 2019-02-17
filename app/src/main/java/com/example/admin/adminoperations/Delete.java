@@ -85,7 +85,7 @@ public class Delete extends AppCompatActivity {
 
         int c_id;
         MyTask1(int c){
-            System.out.println("-------------------------calling ty");
+
             c_id = c;
         }
 
@@ -93,7 +93,6 @@ public class Delete extends AppCompatActivity {
          @Override
          protected void onPreExecute() {
              super.onPreExecute();
-             System.out.println("-------------------------calling t9");
 
 
          }
@@ -162,7 +161,7 @@ public class Delete extends AppCompatActivity {
         protected JSONArray doInBackground(String... args) {
             JSONParser jParser = new JSONParser();
 
-            // Getting JSON from URL
+
             JSONArray json = jParser.getJSONFromUrl("http://192.168.2.26:8080/internship/mobile/main/getcategories");
             return json;
         }

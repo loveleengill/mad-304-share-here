@@ -41,7 +41,7 @@ public class JSONParser {
             InputStream stream = connection.getInputStream();
 
             reader = new BufferedReader(new InputStreamReader(stream));
-
+            Log.d("Response: ", "> " + url);
 
             String line = "";
 

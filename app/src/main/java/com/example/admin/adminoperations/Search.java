@@ -30,5 +30,14 @@ public class Search extends AppCompatActivity {
             }
         });
 
+        travel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Travel.class);
+                startActivity(i);
+
+
+            }
+        });
     }
 }

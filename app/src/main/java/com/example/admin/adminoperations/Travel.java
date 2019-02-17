@@ -29,17 +29,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Restaurant extends AppCompatActivity {
+public class Travel extends AppCompatActivity {
     ListView yourListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
+        Log.d("Response: ", "> " + "ackk");
+        yourListView = (ListView) findViewById(R.id.listViewID);
 
-         yourListView = (ListView) findViewById(R.id.listViewID);
-
-         new JSONParse(this).execute();
+        new JSONParse(this).execute();
 
     }
 
@@ -66,7 +66,7 @@ public class Restaurant extends AppCompatActivity {
             JSONParser jParser = new JSONParser();
 
 
-            JSONArray json = jParser.getJSONFromUrl("http://192.168.2.26:8080/internship/mobile/main/getcategoriesres");
+            JSONArray json = jParser.getJSONFromUrl("http://192.168.2.26:8080/internship/mobile/main/getcategoriestra");
             return json;
         }
 
@@ -98,11 +98,11 @@ public class Restaurant extends AppCompatActivity {
 
 
 
-class Item implements Serializable {
+class Item1 implements Serializable {
 
     String image; String content; String desc;
     Integer id = 0;
-    Item(String image, String content, String desc,int id){
+    Item1(String image, String content, String desc,int id){
         this.image = image;
         this.content = content;
         this.desc = desc;
@@ -115,15 +115,15 @@ class Item implements Serializable {
 
 }
 
-class ListAdapter extends ArrayAdapter<Item> {
+class ListAdapter3 extends ArrayAdapter<Item> {
 
-    public ListAdapter(Context context, int textViewResourceId) {
+    public ListAdapter3(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
     }
 
     private List<Item> items;
 
-    public ListAdapter(Context context, int resource, List<Item> items) {
+    public ListAdapter3(Context context, int resource, List<Item> items) {
         super(context, resource, items);
         this.items = items;
     }
@@ -150,9 +150,9 @@ class ListAdapter extends ArrayAdapter<Item> {
 
         if (p != null) {
 
-           content.setText(p.content);
-           des.setText(p.desc);
-                new DownloadImageTask(im, "http://192.168.2.26:8080/internship/mobile/files/"+p.image).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            content.setText(p.content);
+            des.setText(p.desc);
+            new DownloadImageTask(im, "http://192.168.2.26:8080/internship/mobile/files/"+p.image).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
 
         }
@@ -186,11 +186,12 @@ class ListAdapter extends ArrayAdapter<Item> {
 
         protected void onPostExecute(Bitmap result) {
             if(result != null){
-            int nh = (int) ( result.getHeight() * (512.0 / result.getWidth()) );
-            Bitmap scaled = Bitmap.createScaledBitmap(result, 512, nh, true);
+                int nh = (int) ( result.getHeight() * (512.0 / result.getWidth()) );
+                Bitmap scaled = Bitmap.createScaledBitmap(result, 512, nh, true);
 
-            bmImage.setImageBitmap(scaled);
+                bmImage.setImageBitmap(scaled);
             }
         }
     }
+
 }

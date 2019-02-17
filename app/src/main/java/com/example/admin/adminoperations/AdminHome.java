@@ -21,7 +21,7 @@ public class AdminHome extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
+
                 Intent i = new Intent(getApplicationContext(), AdminAdd.class);
                 startActivity(i);
             }
@@ -31,7 +31,7 @@ public class AdminHome extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
+
                 Intent i = new Intent(getApplicationContext(), Delete.class);
                 startActivity(i);
             }
@@ -41,7 +41,7 @@ public class AdminHome extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
+
                 Intent i = new Intent(getApplicationContext(), Update.class);
                 startActivity(i);
             }

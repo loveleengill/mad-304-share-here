@@ -77,7 +77,7 @@ public class Update extends AppCompatActivity {
         protected JSONArray doInBackground(String... args) {
             JSONParser jParser = new JSONParser();
 
-            // Getting JSON from URL
+
             JSONArray json = jParser.getJSONFromUrl("http://192.168.2.26:8080/internship/mobile/main/getcategories");
             return json;
         }
@@ -171,7 +171,7 @@ Context cx;
         return v;
     }
 
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+    class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
         public DownloadImageTask(ImageView bmImage) {
