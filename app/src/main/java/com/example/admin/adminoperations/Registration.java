@@ -62,7 +62,7 @@ public class Registration extends AppCompatActivity {
 
             try {
 
-                url = new URL("http://192.168.2.26:8080/internship/mobile/main/registration&"+typee+"&"+uname+"&"+pass+"&"+lname+"&"+fname+"&"+emaill+"");
+                url = new URL("http://10.0.2.2:27897/WebApplication1/Myapp/main/registration&"+typee+"&"+uname+"&"+pass+"&"+lname+"&"+fname+"&"+emaill+"");
                 HttpURLConnection client = null;
                 client = (HttpURLConnection) url.openConnection();
                 client.setRequestMethod("GET");
